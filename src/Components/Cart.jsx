@@ -11,7 +11,7 @@ import {
     Row,
     CardHeader,
 } from "reactstrap"
-import CartItem from "./CartItem";
+
 
 
 const Cart = ({ CartItem, removeItem, buyNow}) => {

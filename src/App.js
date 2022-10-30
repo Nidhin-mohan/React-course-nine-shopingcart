@@ -27,6 +27,7 @@ const addInCart = item => {
     toast("already added in cart", {
       type: "error"
     });
+    return;
   };
 
   setCartItem([...cartItem, item]);
@@ -42,13 +43,13 @@ const buNow = () => {
 
 const removeItem = item => {
   setCartItem(cartItem.filter(singleItem => singleItem.id !== item.id))
-}
+};
 
 
 
   return (
    <Container>
-    <h1>hi </h1>
+ 
     <ToastContainer>
       <Row>
        

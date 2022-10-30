@@ -1,22 +1,23 @@
 import React, {useState, useEffect}  from "react";
 import Axios  from "axios";
+import CartItem from "./CartItem";
 
 import { faker } from "@faker-js/faker";
 
 
 // import {random, commerce} from "faker"
 import {Container, Col, Row } from "reactstrap"
-import CartItem from "./CartItem";
+
 
 // const apiKey = " KEy"
 // const url = "https:api.pexels.com/v1/search?query=laptop$per_page=6&page=1"
 const localurl = "https://myjson.dit.upm.es/api/bins/8icy";
 
-const BuyPage = () => {
+const BuyPage = ({ addInCart }) => {
     
     const [product, setProduct] = useState([])
     const fetchPhotos = async () => {
-      const { data } = await Axios.get(localurl);
+      const { data } = await Axios.get(localurl,{});
 
       const { photos } = data;
 
@@ -43,7 +44,7 @@ const BuyPage = () => {
          <Row>
            {product.map((product) => (
              <Col md={4} key={product.id}>
-               <CartItem product={product}  addInCart = { addInCart } />
+               <CartItem product={product}  addInCart = { addInCart }  />
              </Col>
            ))}
          </Row>
